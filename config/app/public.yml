@@ -1,0 +1,30 @@
+Server: # 服务配置
+  RunMode: debug # release 为生产模式
+  Address: :8080 # 监听端口
+  ReadTimeout: 5s
+  WriteTimeout: 5s
+  DefaultContextTimeout: 10s #默认超时时间
+App: # App配置文件
+  Name: qianshou  # App名称
+  Version: 1.0.0 # 版本号
+  StartTime: "2022-10-27" # 启动时间
+  MachineID: 0 # 机器ID
+Log: # 日志配置文件
+  Level: debug
+  LogSavePath: "storage/applogs/" # 日志保存路径
+  HighLevelFile: error          # 高级别日志文件名
+  LowLevelFile: info          # 低级别文件名
+  LogFileExt: .log          # 日志文件后缀
+  MaxSize: 10 # 日志文件最大大小 MB
+  MaxAge: 30 # 日志文件最大保存天数
+  MaxBackups: 7 # 最大备份数
+  Compress: false # 是否压缩
+Rule: # 规则配置
+  UsernameLenMax: 32 # 用户名最大长度
+  UsernameLenMin: 1 # 用户名最小长度
+Limit: # 限流
+  IPLimit: # IP限流
+    Cap: 10           # 令牌桶容量
+    GenNum: 5         # 令牌产生数
+    GenTime: 1       # 令牌产生时间
+    Cost: 1           # 本次取走的令牌数
